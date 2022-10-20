@@ -59,9 +59,9 @@ ARG PAYMENTS_REPO=https://github.com/frappe/payments
 ARG ERPNEXT_VERSION
 ARG ERPNEXT_REPO=https://github.com/greenphyto/erpnext
 RUN --mount=type=cache,target=/root/.cache/pip \
-    #if [ -z "${ERPNEXT_VERSION##*v14*}" ] || [ "$ERPNEXT_VERSION" = "develop" ]; then \
-    git clone --depth 1 -b ${PAYMENTS_VERSION} ${PAYMENTS_REPO} apps/payments && install-app payments; \
-    #fi \
+    if [ -z "${ERPNEXT_VERSION##*v14*}" ] || [ "$ERPNEXT_VERSION" = "develop" ]; then \
+        git clone --depth 1 -b ${PAYMENTS_VERSION} ${PAYMENTS_REPO} apps/payments && install-app payments; \
+    fi \
     && git clone --depth 1 -b ${ERPNEXT_VERSION} ${ERPNEXT_REPO} apps/erpnext \
     && install-app erpnext
 
