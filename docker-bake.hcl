@@ -6,11 +6,11 @@ variable "REGISTRY_USER" {
 }
 
 variable "FRAPPE_VERSION" {
-    default = "develop"
+    default = "v14.12.0"
 }
 
 variable "ERPNEXT_VERSION" {
-    default = "develop"
+    default = "gp.v14.3.1"
 }
 
 variable "FRAPPE_REPO" {
@@ -18,7 +18,7 @@ variable "FRAPPE_REPO" {
 }
 
 variable "ERPNEXT_REPO" {
-    default = "https://github.com/frappe/erpnext"
+    default = "https://github.com/greenphyto/erpnext"
 }
 
 variable "BENCH_REPO" {
